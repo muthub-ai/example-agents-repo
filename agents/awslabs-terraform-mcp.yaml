@@ -1,0 +1,14 @@
+apiVersion: kagent.dev/v1alpha1
+kind: ToolServer
+metadata:
+  name: awslabs.terraform-mcp-server-latest
+  namespace: kagent
+spec:
+  config:
+    stdio:
+      args:
+      - awslabs.terraform-mcp-server@latest
+      command: uvx
+      env:
+        FASTMCP_LOG_LEVEL: ERROR
+  description: "AWS Terraform MCP"
