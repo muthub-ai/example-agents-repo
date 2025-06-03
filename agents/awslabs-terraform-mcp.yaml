@@ -1,14 +1,38 @@
 apiVersion: kagent.dev/v1alpha1
 kind: ToolServer
 metadata:
-  name: awslabs.terraform-mcp-server-latest
+  name: awslabs-terraform-mcp-server-latest # Consider versioning: awslabs-terraform-mcp-server-v1
   namespace: kagent
+  labels:
+    app: awslabs-terraform-mcp
+    environment: production
+  annotations:
+    description: "ToolServer for AWS Labs Terraform MCP"
 spec:
   config:
     stdio:
-      args:
-      - awslabs.terraform-mcp-server@latest
+      # Command to launch the server; consider parameterizing the version
       command: uvx
+      args:
+        - awslabs.terraform-mcp-server@latest # Change @latest to a fixed version for stability, e.g. @v1.2.3
       env:
-        FASTMCP_LOG_LEVEL: ERROR
-  description: "AWS Terraform MCP"
+        FASTMCP_LOG_LEVEL: ERROR # Change to INFO or DEBUG for troubleshooting
+        # Add more environment variables here as needed
+    # Optionally add resource specifications if supported
+    # resources:
+    #   limits:
+    #     cpu: "500m"
+    #     memory: "512Mi"
+    #   requests:
+    #     cpu: "250m"
+    #     memory: "256Mi"
+    # Optionally add health checks if supported
+    # livenessProbe:
+    #   httpGet:
+    #     path: /healthz
+    #     port: 8080
+    # readinessProbe:
+    #   httpGet:
+    #     path: /ready
+    #     port: 8080
+  description: "AWS Terraform MCP server providing multi-cloud provisioning capabilities"
