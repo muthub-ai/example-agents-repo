@@ -13,4 +13,4 @@ Join us as we:
 - Create and refine agent instructions in real-time to generate Terraform configurations
 - Integrate with the AWS Labs Terraform MCP server to ensure adherence to infrastructure best practices
 
-Watch the recording here: https://www.youtube.com/watch?v=paqxLLotp3k
+Watch the recording : https://www.youtube.com/watch?v=paqxLLotp3k
