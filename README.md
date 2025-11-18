@@ -14,3 +14,5 @@ Join us as we:
 - Integrate with the AWS Labs Terraform MCP server to ensure adherence to infrastructure best practices
 
 Watch the recording : https://www.youtube.com/watch?v=paqxLLotp3k
+
+S.
